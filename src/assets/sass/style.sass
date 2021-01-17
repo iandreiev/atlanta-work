@@ -1,0 +1,159 @@
+*
+    padding: 0
+    margin: 0
+  
+*, *::before, *::after
+    box-sizing: border-box
+
+.main
+    position: relative
+    height: 100vh
+    .main__left
+        position: absolute
+        bottom: 0
+        left: 10%
+        z-index: -9999
+    .main__right
+        position: absolute
+        bottom: 0
+        right: 10%
+        z-index: -9999
+    .main_center
+        position: absolute
+        margin-left: auto
+        margin-right: auto
+        left: 0
+        right: 0
+        bottom: 0
+        text-align: center
+        z-index: -9999
+    .wrapper__main
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        .main__header
+            display: flex
+            align-items: center
+            justify-content: center
+        .w-520
+            width: 360px
+        .main__header_text
+            font-family: "Proxima Nova Rg"
+            font-style: normal
+            font-weight: 900
+            font-size: 28px
+            color: #2D63F0
+            margin-left: 15px
+        .main__block
+            margin-top: 30px
+
+            .main__block_step
+                font-family: "Proxima Nova Rg"
+                font-style: normal
+                font-weight: 500
+                font-size: 16px
+                color: #828282
+            .main__block_title
+                font-family: "Proxima Nova Rg"
+                font-style: normal
+                font-weight: bold
+                font-size: 32px
+                color: #333333
+            .main__block_descr
+                font-family: "Proxima Nova Rg"
+                font-style: normal
+                font-weight: 500
+                font-size: 21px
+                line-height: 28px
+                color: #333333
+.form       
+    display: flex
+    flex-direction: column
+    justify-content: center
+    font-family: sans-serif
+    font-size: 18px        
+.form-controller 
+    position: relative
+    font-size: 14px
+    padding-top: 20px
+    margin-bottom: 5px
+.form-controller input 
+    border: none
+    -webkit-appearance: none
+    -ms-appearance: none
+    -moz-appearance: none
+    appearance: none
+    background: #f2f2f2
+    padding: 12px
+    height: 40px
+    border-radius: 3px
+    width: 100%
+    outline: none
+    font-size: 14px
+.form-controller .placeholder 
+    position: absolute
+    left: 12px
+    top: calc(50% + 10px)
+    transform: translateY(-50%)
+    color: #aaa
+    transition: top 0.3s ease,
+    color: 0.3s ease,
+    font-size: 0.3s ease
+.form-controller.input input 
+    background: #fff
+    border: 2px solid #ddd
+    transition: border-color 0.3s ease
+input[type="text"]::placeholder 
+    color: #aaa
+.form-controller.input input + .placeholder 
+    left: 8px
+    padding: 0 5px
+.form-controller.input input:valid,
+.form-controller.input input:focus 
+    border-color: #2F80ED
+    transition-delay: 0.1s
+.form-controller.input input:valid + .placeholder,
+.form-controller.input input:focus + .placeholder 
+    top: 20px
+    font-size: 10px
+    color: #2F80ED
+    background: #fff
+
+.form-btn
+    background: #2D63F0
+    border-radius: 6px
+    border: 0px
+    height: 50px
+    font-style: normal
+    font-weight: 500
+    font-size: 21px
+    line-height: 24px
+    text-align: center
+    color: #FFFFFF
+    margin-top: 15px
+
+.form_title
+    font-family: "Proxima Nova Rg"
+    font-style: normal
+    font-weight: 900
+    font-size: 18px
+    color: #2D63F0
+
+#pet-select
+    height: 40px
+    font-family: "Proxima Nova Rg"
+    font-style: normal
+    font-size: 12px
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    color: #333333
+
+select
+    outline-color: #2D63F0
+// select:hover 
+//     border-color: #2AD2C9
+
+input, select, button, textarea
+    font-family: "Proxima Bova Rg", sans-serif
