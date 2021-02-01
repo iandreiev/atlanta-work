@@ -32,9 +32,10 @@
                 {{ i.subtitle }}
               </p>
             </div>
+        
             <form action="" class="form">
               <div class="form" v-for="(item, index) in i.forms" :key="index">
-                  <InputText :item="item" v-model="item.id" />
+                  <InputText :item="item"  @change="setFieldValue($event, item.name)" :value="getFieldValue(item.name)" />
                 <div class="form" v-show="item.type =='select'">
                 <select name="pets" v-model="selected" id="pet-select">
                     <option selected disabled hidden>Выберите категорию</option>
@@ -80,6 +81,10 @@ export default {
       payment: null,
       task: null,
       selected: null,
+      form:{
+       name:'',
+       telegram:''
+      }
     };
   },
   methods: {
@@ -93,15 +98,19 @@ export default {
     nextStep() {
       let n = this.step + 1;
       this.$store.commit("SET_STEP", n);
-      console.log(`Set to state: ${n}`);
-
       if (this.step == 5) {
         this.$store;
       }
     },
+    getFieldValue(field) {
+      return this.form[field]
+},
+setFieldValue(value, field) {
+      this.form[field] = value
+}
   },
   computed: {
-    ...mapState(["step"]),
+    ...mapState(["step", "ticket"]),
   },
   mounted() {
     console.log(`Load from state ${this.step}`);
