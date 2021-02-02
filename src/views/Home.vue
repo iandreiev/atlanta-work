@@ -33,7 +33,7 @@
               </p>
             </div>
         
-            <form action="" class="form">
+            <form action="" class="form" >
               <div class="form" v-for="(item, index) in i.forms" :key="index">
                   <InputText :item="item"  @change="setFieldValue($event, item.name)" :value="getFieldValue(item.name)" />
                 <div class="form" v-show="item.type =='select'">
@@ -49,6 +49,7 @@
                 type="button"
                 id="first-btn"
                 @click="nextStep()"
+                
                 class="form-btn"
                 value="Дальше"
               />
@@ -107,13 +108,29 @@ export default {
 },
 setFieldValue(value, field) {
       this.form[field] = value
-}
+},
+handleEnter(e){
+  if(e.keyCode === 13){
+    this.nextStep()
+  }else{
+    console.log('not allowed')
+  }
+},
   },
   computed: {
     ...mapState(["step", "ticket"]),
   },
   mounted() {
     console.log(`Load from state ${this.step}`);
+
+    window.addEventListener('keyup',(e)=>{
+      if(e.keyCode === 13){
+        this.nextStep()
+      }
+      if(this.step == 6){
+        this.$store.commit("SET_STEP", 1)
+      }
+    })
   },
 };
 </script>
